@@ -1,37 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AIRC0OL</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AIRCOOL</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+    }
+    body {
+      background-color: white;
+      color: #000;
+    }
+    header {
+      background-color: #0019FF;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header .logo {
+      font-weight: bold;
+      font-size: 20px;
+    }
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    .hero {
+      background: url('https://static.wixstatic.com/media/84770f_0b7c83296c154f8ca9f5a2f17247f45c~mv2.jpg') center/cover no-repeat;
+      height: 400px;
+      position: relative;
+    }
+    .scroll-down {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 24px;
+      color: #0019FF;
+    }
+    .chat-button {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      background-color: #0019FF;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .services h2,
+    .quote h2,
+    .about h2,
+    .contact h2 {
+      font-size: 24px;
+      color: #FF5A3C;
+      margin-bottom: 20px;
+    }
+    .service-items {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 30px;
+      max-width: 800px;
+      margin: 0 auto 30px;
+    }
+    .learn-more, .contact-button, .read-more {
+      background: none;
+      border: 1px solid #FF5A3C;
+      color: #FF5A3C;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .quote {
+      background-color: #0019FF;
+      color: white;
+    }
+    .testimonial {
+      font-style: italic;
+      padding: 40px 20px;
+    }
+    .testimonial cite {
+      display: block;
+      margin-top: 10px;
+      color: #FF5A3C;
+    }
+    .contact {
+      background-color: #0019FF;
+      color: white;
+    }
+    .contact-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 30px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .contact-info, .contact-form {
+      flex: 1 1 45%;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: none;
+      border-radius: 4px;
+    }
+    .contact-form button {
+      padding: 10px 20px;
+      background: white;
+      color: #0019FF;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .map {
+      width: 100%;
+      height: 200px;
+      background-color: #ccc;
+    }
+    footer {
+      text-align: center;
+      font-size: 12px;
+      padding: 20px;
+      background: #0019FF;
+      color: white;
+    }
+  </style>
 </head>
 <body>
-
-  <!-- Header -->
-  <header class="top-bar">
-    <div class="info-bar">
-      <span>CALL FOR A FREE QUOTE: <strong>123-456-7890</strong></span>
-    </div>
-    <nav class="navbar">
-      <div class="logo">AIRCOOL</div>
-      <ul class="nav-links">
+  <header>
+    <div class="logo">AIRCOOL</div>
+    <nav>
+      <ul>
         <li><a href="#">HOME</a></li>
-        <li><a href="#">SERVICES</a></li>
-        <li><a href="#">ABOUT</a></li>
-        <li><a href="#">CONTACT</a></li>
+        <li><a href="#services">SERVICES</a></li>
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#contact">CONTACT</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Hero Section -->
   <section class="hero">
-    <img src="hero-image.jpg" alt="Sofa and pillows" class="hero-img">
-    <a href="#services" class="scroll-down">↓</a>
+    <a href="#services" class="scroll-down">&#x25BC;</a>
     <button class="chat-button">LET’S CHAT!</button>
   </section>
 
-  <!-- Services Section -->
   <section class="services" id="services">
     <h2>OUR SERVICES</h2>
     <div class="service-items">
@@ -40,57 +181,50 @@
       <div class="service">A/C Repair</div>
       <div class="service">System Installation</div>
       <div class="service">Heat Pump Repair</div>
-      <div class="service">Duct Cleaning</div>
+      <div class="service">Duct Cleaning and Repair</div>
     </div>
     <button class="learn-more">Learn More</button>
   </section>
 
-  <!-- Quote Section -->
   <section class="quote">
     <h2>GET A FREE QUOTE TODAY!</h2>
     <p>Call Us Today: 123-456-7890<br>or Fill out the Form Below and We’ll Get Back to You with a Quote</p>
     <button class="contact-button">Contact Us</button>
   </section>
 
-  <!-- About Section -->
-  <section class="about">
+  <section class="about" id="about">
     <h2>ABOUT US</h2>
-    <p>I'm a paragraph. Click here to add your own text...</p>
+    <p>I’m a paragraph. Click here to add your own text and edit me.</p>
     <button class="read-more">Read More</button>
   </section>
 
-  <!-- Testimonial Section -->
   <section class="testimonial">
     <blockquote>
       “I’m a testimonial. Click to edit me and add text that says something nice about you and your services.”
     </blockquote>
-    <cite>Nick Wilson, Mission Bay</cite>
+    <cite>Nick Wilson, Mission Bay.</cite>
   </section>
 
-  <!-- Contact Section -->
-  <section class="contact">
+  <section class="contact" id="contact">
     <h2>CONTACT US NOW</h2>
     <div class="contact-wrapper">
       <div class="contact-info">
         <p>123-456-7890<br>info@mysite.com<br>500 Terry Francois Street, San Francisco, CA 94158</p>
-        <div class="map" id="map"></div>
+        <div class="map">[Google Map Here]</div>
       </div>
       <form class="contact-form">
-        <input type="text" placeholder="First Name" />
-        <input type="text" placeholder="Last Name" />
-        <input type="email" placeholder="Email" />
-        <input type="text" placeholder="Subject" />
+        <input type="text" placeholder="First Name">
+        <input type="text" placeholder="Last Name">
+        <input type="email" placeholder="Email">
+        <input type="text" placeholder="Subject">
         <textarea placeholder="Message"></textarea>
         <button type="submit">Submit</button>
       </form>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="footer">
+  <footer>
     <p>© 2025 by AirCool. Powered and secured by Wix</p>
   </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
